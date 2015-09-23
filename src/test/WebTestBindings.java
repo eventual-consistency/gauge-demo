@@ -1,5 +1,5 @@
-import com.thoughtworks.gauge.AfterSuite;
-import com.thoughtworks.gauge.BeforeSuite;
+import com.thoughtworks.gauge.AfterSpec;
+import com.thoughtworks.gauge.BeforeSpec;
 import com.thoughtworks.gauge.Step;
 import com.thoughtworks.gauge.Table;
 import org.openqa.selenium.WebDriver;
@@ -77,7 +77,7 @@ public class WebTestBindings
 	/**
 	 * Start Selenium
 	 **/
-	@BeforeSuite
+	@BeforeSpec
 	public void initializeSuite()
 	{
 		System.out.println("Hello");
@@ -87,7 +87,7 @@ public class WebTestBindings
 	/**
 	 * Stop selenium
 	 **/ 
-	@AfterSuite
+	@AfterSpec
 	public void teardownSuite()
 	{
 		stopWebDriver();

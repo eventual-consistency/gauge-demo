@@ -1,4 +1,8 @@
 package steveg.common;
+import com.thoughtworks.gauge.screenshot.ICustomScreenshotGrabber;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.OutputType;
+import static org.openqa.selenium.OutputType.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -17,6 +21,7 @@ import org.openqa.selenium.support.PageFactory;
  * @version		1.0.0.0
  **/
 public abstract class AbstractWebTest
+	implements ICustomScreenshotGrabber
 {	
 	private WebDriver m_webDriver;	// Webdriver client instance
 	
@@ -72,7 +77,18 @@ public abstract class AbstractWebTest
 		if (m_webDriver == null)
 			throw new RuntimeException("The WebDriver was not initialized before a request was attempted.");		
 	}
-	
+
+    /**
+     * @return Byte array of the screenshot taken.
+     * Return an empty Byte array if unable to capture screen.
+     */
+    public byte[] takeScreenshot()
+	{
+		System.out.println("TAKING SCREENSHOT");
+		
+        return ((TakesScreenshot) m_webDriver).getScreenshotAs(OutputType.BYTES);
+	}
+
 	/**
 	 * Navigate to a URL using the WebDriver. Raises an error if the final request
 	 * is not a HTTP success (200 OK or equivelent response)

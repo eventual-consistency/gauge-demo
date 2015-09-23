@@ -1,0 +1,9 @@
+gauge_bin/**
+reports/**
+logs/**
+
+# Some standard OS cruft files
+thumbs.db
+.DS_Store
+*.tmp
+*.swp

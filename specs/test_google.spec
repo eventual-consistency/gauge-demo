@@ -9,7 +9,8 @@ in business English which will be executed. To run this file execute
 
 Search Google
 --------------
-Validate that the Google homepage loads without errors.
+When searching Google for the president of the United States, the current
+sitting president should be shown on the results page.
 
 tags: hello world, first test
 
@@ -17,3 +18,15 @@ tags: hello world, first test
 * Type "Who is the US President" into "lst-ib"
 * Wait up to "10" seconds for element "search"
 * Page should contain text "Barack Obama"
+
+Search Google and Fail
+--------------
+When searching for the president of the United States, Steve Gray should not
+be there. This is also a good test to show the screen-shot feature in action.
+
+tags: hello world, first test
+
+* Navigate to "http://www.google.com/"
+* Type "Who is the US President" into "lst-ib"
+* Wait up to "10" seconds for element "search"
+* Page should contain text "Steve Gray"
