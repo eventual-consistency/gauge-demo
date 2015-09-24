@@ -1,6 +1,5 @@
-gauge_bin/**
-reports/**
-logs/**
+# Any interim outputs
+output/**
 
 # Some standard OS cruft files
 thumbs.db
